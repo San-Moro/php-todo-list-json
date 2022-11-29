@@ -27,7 +27,13 @@ $todos = [
     ]
 ];
 
+// aggiunta dei dati
+if(isset($_POST["newTodo"])) {
+    $new_todo = $_POST["newTodo"];
+    $todos[] = $new_todo;
+}
 
+// invio dei dati
 $todos_json = json_encode($todos);
 
 header('Content-Type: application/json');

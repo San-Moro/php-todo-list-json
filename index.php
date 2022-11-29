@@ -18,14 +18,20 @@
             <div class="container">
                 <h1>PHP ToDoList JSON</h1>
                 <div class="row">
-                    <div class="col">
+                    <div class="col-8">
                         <ul class="list-group">
-                            <li class="list-group-item" v-for="todo in todoList">{{}}</li>
+                            <li class="list-group-item" v-for="todo in todoList">{{ todo.text }}</li>
                             <!-- <li class="list-group-item">A second item</li>
                             <li class="list-group-item">A third item</li>
                             <li class="list-group-item">A fourth item</li>
                             <li class="list-group-item">And a fifth one</li> -->
                         </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-8 d-flex mt-3">
+                        <input class="form-control" type="text" placeholder="Scrivi nuovo todo.." aria-label="Inserisci un nuovo todo" v-model="newTodo">
+                        <button class="btn btn-primary" @click="addTodo">Aggiungi</button>                        
                     </div>
                 </div>
             </div>
